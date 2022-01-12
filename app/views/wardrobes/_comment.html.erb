@@ -1,0 +1,21 @@
+<table>
+  <% @wardrobe.wardrobe_comments.each do |wardrobe_comment| %>
+    <% wardrobe_comment_user = wardrobe_comment.user %>
+    <tr>
+    	<td>
+    		<%= link_to user_path(wardrobe_comment_user), class: "user_#{wardrobe_comment_user.id}" do %>
+      		<%= attachment_image_tag wardrobe_comment_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
+      		<%= wardrobe_comment_user.name %>
+    		<% end %>
+    	</td>
+    	<td><%= wardrobe_comment.comment %></td>
+    	<% if current_user == wardrobe_comment_user %>
+      	<td><%= link_to 'Destroy', wardrobe_wardrobe_comment_path(wardrobe_comment.wardrobe_id, wardrobe_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
+    	<% end %>
+    </tr>
+  <% end %>
+</table>
+<%= form_with(model:[@wardrobe_comment],url: wardrobe_wardrobe_comments_path(@wardrobe), method: :post, local: true) do |f| %>
+  <%= f.text_area :comment, size:"90x5" %><br>
+  <%= f.submit '送信'%>
+<% end %>

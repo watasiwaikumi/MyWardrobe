@@ -1,0 +1,110 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'info', user: @user %>
+      <h2 class="mt-3">New wardrobe</h2>
+      <%#= render 'wardrobes/form', wardrobe: @wardrobe %>
+    </div>
+
+    <div class='col-md-8 offset-md-1'>
+      <%= render 'layouts/search', searches: @search %>
+      <h2>wardrobes</h2>
+      <%#= render 'wardrobe_index',wardrobes: @wardrobes %>
+    </div>
+  </div>
+</div>
+
+<h3 class="text-center">カレンダー</h3>
+<!-- カレンダーの表示 -->
+<div id="calendar"></div>
+<!-- もしユーザーがログインしていたら -->
+<% if user_signed_in? %>
+    <!-- ページのparams.idがログインユーザー.idと同じなら -->
+    <% if @user.id == current_user.id %>
+        <div id="inputScheduleForm" class="modal fade" tabindex="-1">
+            <div class="modal-dialog modal-nm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">スケジュール登録</h4>
+                    </div>
+                    <div class="modal-body">
+                        <%= form_with model: @calendar, url: calendars_path do |f| %>
+                            <div  class="col">
+                                    <p>
+                                        <span>タイトル</span>
+                                        <span><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
+                                    </p>
+                                    <span>開始日時</span>
+                                    <span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
+                                    <span>終了日時</span>
+                                    <span><%= f.datetime_field :end, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
+                                    <span>詳細
+                                    <%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %></span>
+                            </div>
+                            <div class="modal-footer">
+                                <%= f.submit "登録する", class: "btn btn-primary" %>
+                                <%= f.hidden_field :user_id, :value => current_user.id %>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- 編集 ------------------------------------------------------------------>
+        <div id="inputEditForm">
+            <%= render 'calendars/edit', calendars: @calendars %>
+        </div>
+    <% end %>
+<% end %>
+    <script>
+    // CRUDを行う際にCSRF対策のtokenを発行
+        $(document).ready(function() {
+        var prepare = function(options, originalOptions, jqXHR) {
+          var token;
+          if (!options.crossDomain) {
+            token = $('meta[name="csrf-token"]').attr('content');
+            if (token) {
+              return jqXHR.setRequestHeader('X-CSRF-Token', token);
+            }
+          }
+        };
+        }
+        )
+
+        // カレンダー表示
+        $('#calendar').fullCalendar ({
+            header: {
+                left: 'prev,next today',
+                center: 'month,agendaWeek,agendaDay',
+                right: 'title'
+            },
+
+            buttonText: {
+                  prev: "<",
+                  next: ">"
+            },
+
+            timezone: 'UTC',
+            events: '/users/calendars.json',
+            navLinks: true,
+            selectable: true,
+            selectHelper: true,
+            // 日付クリック
+            dayClick : function ( date , jsEvent , view ) {
+                $('#inputScheduleForm').modal('show');
+                },
+
+            // event クリックで編集、削除
+            eventClick : function(event, jsEvent , view) {
+                jsEvent.preventDefault();
+                $(`#inputScheduleEditForm${calendar.id}`).modal('show');
+            },
+
+            eventMouseover : function(calendar, jsEvent , view) {
+                jsEvent.preventDefault();
+            }
+        })
+
+    </script>
