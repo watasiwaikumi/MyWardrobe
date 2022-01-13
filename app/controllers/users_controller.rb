@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @wardrobe = Wardrobe.new
     @calendars = Calendar.where(user_id: @user.id)
     @calendar = Calendar.new
+    @post_images = @user.post_images.page(params[:page])
   end
 
   def search
@@ -46,7 +47,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "You have updated user successfully."
-      redirect_to user_path(current_user)
+      redirect_to users_path(current_user)
     else
       render :edit
     end

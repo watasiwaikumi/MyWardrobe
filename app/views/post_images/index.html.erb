@@ -1,0 +1,12 @@
+<% @post_images.each do |post_image| %>
+<div class="inline-block_test">
+  <%= link_to post_image_path(post_image.id) do %>
+  <%= attachment_image_tag post_image, :image %>
+  <% end %>
+  <p>User：<%= post_image.user.name %></p>
+  <p>Wardrobe：<%= post_image.item_name %></p>
+  <p>Introdaction：<%= post_image.caption %></p>
+  <td><%= link_to 'Show', post_image_path(post_image), class: "post_image#{post_image.id}" %></td>
+</div>
+<% end %>
+

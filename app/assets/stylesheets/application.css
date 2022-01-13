@@ -16,6 +16,7 @@
 .header{
   width: 800px;
   margin: 0 auto;
+  text-align : center;
 }
 nav ul {
   display: flex;
@@ -37,4 +38,12 @@ a {
   margin: 0 auto;
   padding: 10px 20px;
   display: inline-block;
+}
+
+div.about {
+text-align: center;
+}
+
+div.top {
+text-align: center;
 }

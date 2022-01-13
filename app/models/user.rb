@@ -8,7 +8,8 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
 	has_many :comments, dependent: :destroy
 	has_many :calendars
-  # attachment :profile_image, destroy: false
+	has_many :post_images, dependent: :destroy
+  attachment :profile_image
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
 

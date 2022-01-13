@@ -11,6 +11,7 @@ class WardrobesController < ApplicationController
 
   def index
     @wardrobe = Wardrobe.new
+    @wardrobes = Wardrobe.all
   end
 
   def create
