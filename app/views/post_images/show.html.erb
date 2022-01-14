@@ -6,7 +6,7 @@
   <p>Day：<%= @post_image.created_at.strftime('%Y/%m/%d') %></p>
   <% if @post_image.user == current_user %>
     <%= link_to "DELETE", post_image_path(@post_image), method: :delete %>
-    <%= link_to "EDIT", post_image_path(@post_image) %>
+    <%= link_to "EDIT", edit_post_image_path(@post_image) %>
     <%= link_to "BACK", post_images_path(@post_image) %>
   <% end %>
 </div>

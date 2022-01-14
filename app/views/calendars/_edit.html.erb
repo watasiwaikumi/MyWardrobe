@@ -3,26 +3,26 @@
     <div class="modal-dialog modal-nm">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title">EDIT</h3>
+          <h4 class="modal-title">EDIT</h4>
         </div>
         <div class="modal-body">
           <div  class="col">
             <%#= form_with(model: calendar, url: users_calender_path(calender), method: :put) do |f| %>
               <p>
                 <span>TITLE</span>
-                <span id="inputTitle" value=""><%#= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
+                <!--<span id="inputTitle" value=""><%#= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>-->
               </p>
                 <span>START</span>
-                <span><%#= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
+                <!--<span><%#= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>-->
                 <span>FINISH</span>
-                <span><%#= f.datetime_field  :end, placeholder: "XXXX-XX-XX", class:"field" %></span>
+                <!--<span><%#= f.datetime_field  :end, placeholder: "XXXX-XX-XX", class:"field" %></span>-->
                 <span><br>
                     DETAIL
                     <%#= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %>
                 </span>
                 <div class="modal-footer">
                     <%#= f.hidden_field :user_id, :value => current_user.id %>
-                    <%#= f.submit "編集する", class: "btn btn-primary" %>
+                    <%#= f.submit "EDIT", class: "btn btn-primary" %>
                     <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
                 </div>
             <%# end %>

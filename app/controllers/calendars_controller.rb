@@ -11,6 +11,11 @@ class CalendarsController < ApplicationController
       @calendars = Calendar.where(user_id: current_user.id)
       calendar.update(calendar_params)
   end
+  
+  def edit
+      calendar = Calendar.find(params[:id])
+      @calendars = Calendar.where(user_id: current_user.id)
+  end
 
   def destroy
       @user = User.find(params[:id])

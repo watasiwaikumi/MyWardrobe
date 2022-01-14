@@ -1,5 +1,5 @@
 <% if wardrobe.favorited_by?(current_user) %>
-  <%= link_to wardrobe_favorites_path(wardrobe), method: :delete, remote: true, class: "fas fa-heart heart_red" %>
+  <%= link_to wardrobe_favorites_path(wardrobe), method: :delete, remote: true, class: "fas fa-heart favorite-btn-unlike" %>
 <% else %>
-  <%= link_to wardrobe_favorites_path(wardrobe), method: :post, remote: true, class: "fas fa-heart heart_blue" %>
+  <%= link_to wardrobe_favorites_path(wardrobe), method: :post, remote: true, class: "fas fa-heart favorite-btn" %>
 <% end %>
