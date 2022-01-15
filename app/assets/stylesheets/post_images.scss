@@ -7,3 +7,29 @@
     padding:  20px;
     height: 100px;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.item {
+  width: 100%;
+  padding: 3em;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.item-image {
+  margin-bottom: 1em;
+}
+.item-image img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}

@@ -30,7 +30,7 @@
                                 <%= f.hidden_field :user_id, :value => current_user.id %>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
                             </div>
-                        <% end %>
+                            <% end %>
                     </div>
                 </div>
             </div>
@@ -39,6 +39,7 @@
         <div id="inputEditForm">
             <%= render 'calendars/edit', calendars: @calendars %>
         </div>
+
     <% end %>
 <% end %>
     <script>

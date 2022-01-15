@@ -1,21 +1,27 @@
-<% @post_images.each do |post_image| %>
 <div class="inline-block_test">
-  <%= link_to post_image_path(post_image.id) do %>
-  <%= attachment_image_tag post_image, :image %>
+  <% @post_images.each do |post_image| %>
+      <div class="item-list">
+        <div class="item">
+          <div class="item-image">
+            <div class="item-text">
+              <%= link_to post_image_path(post_image.id) do %>
+                <%= attachment_image_tag post_image, :image %>
+              <% end %>
+              <!--<p>User：<%#= post_image.user.name %></p>-->
+              <p>Wardrobe：<%= post_image.item_name %></p>
+              <p>Introdaction：<%= post_image.caption %></p>
+              <td><%= link_to 'Show', post_image_path(post_image), class: "post_image#{post_image.id}" %></td>
+      
+                <%# @tag_list.each do |list|%>
+                <%#=list.name %>
+                <%#="(#{list.post_images.count})" %><%# end %>
+                
+                <!--投稿一覧画面で投稿に紐づくタグを表示-->
+                <%# @post_images.each do |post_image| %>
+                <!--<i class="fas fa-tag"><%#= post_image.tags.map(&:name).join(', ') %></i>-->
+            </div>
+          </div>
+        </div>
+      </div>
   <% end %>
-  <p>User：<%= post_image.user.name %></p>
-  <p>Wardrobe：<%= post_image.item_name %></p>
-  <p>Introdaction：<%= post_image.caption %></p>
-  <td><%= link_to 'Show', post_image_path(post_image), class: "post_image#{post_image.id}" %></td>
-  
-  <%# @tag_list.each do |list|%>
-  <%#=list.name %>
-  <%#="(#{list.post_images.count})" %><%# end %>
-  
-  <!--投稿一覧画面で投稿に紐づくタグを表示-->
-  <%# @post_images.each do |post_image| %>
-  <!--<i class="fas fa-tag"><%#= post_image.tags.map(&:name).join(', ') %></i>-->
-
 </div>
-<% end %>
-

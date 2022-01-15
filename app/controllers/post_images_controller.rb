@@ -2,6 +2,7 @@ class PostImagesController < ApplicationController
 
   def new
     @post_image = PostImage.new
+    @wardrobes = current_user.wardrobes
   end
 
   def create
@@ -47,6 +48,6 @@ class PostImagesController < ApplicationController
   private
 
   def post_image_params
-    params.require(:post_image).permit(:item_name, :image, :caption)
+    params.require(:post_image).permit(:item_name, :image, :caption, :wardrobe_id)
   end
 end

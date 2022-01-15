@@ -40,10 +40,21 @@ a {
   display: inline-block;
 }
 
-div.about {
-text-align: center;
+
+body {
+  min-width: 1500px;
+  max-width: 1500px;
+  margin: 2em auto;
+  padding: 0 10px;
+  color: #222;
+  font-family: 'Courier New', monospace;
+  font-weight: 300;
 }
 
-div.top {
-text-align: center;
+.form-group {
+	width: 200px;
+	float: left;
+	clear: both;
+	margin-right: 30px;
 }
+

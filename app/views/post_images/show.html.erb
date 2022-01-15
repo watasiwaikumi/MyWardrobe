@@ -2,7 +2,7 @@
   <%= attachment_image_tag @post_image, :image %>
   <p>Item：<%= @post_image.item_name %></p>
   <p>Introdaction：<%= @post_image.caption %></p>
-  <p>User：<%= @post_image.user.name %></p>
+  <!--<p>User：<%#= @post_image.user.name %></p>-->
   <p>Day：<%= @post_image.created_at.strftime('%Y/%m/%d') %></p>
   <% if @post_image.user == current_user %>
     <%= link_to "DELETE", post_image_path(@post_image), method: :delete %>

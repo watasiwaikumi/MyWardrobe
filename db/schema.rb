@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_14_084204) do
+ActiveRecord::Schema.define(version: 2022_01_15_102334) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_01_14_084204) do
     t.string "all_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -39,12 +40,14 @@ ActiveRecord::Schema.define(version: 2022_01_14_084204) do
   end
 
   create_table "post_images", force: :cascade do |t|
+    t.integer "wardrobe_id", null: false
     t.text "item_name"
     t.string "image_id"
     t.text "caption"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["wardrobe_id"], name: "index_post_images_on_wardrobe_id"
   end
 
   create_table "post_tags", force: :cascade do |t|

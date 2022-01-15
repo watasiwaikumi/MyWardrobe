@@ -3,7 +3,7 @@
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
   		<h1>Editing wardrobe</h1>
     	<%= render 'layouts/errors', obj: @wardrobe %>
-  		<%#= render 'form', wardrobe: @wardrobe %>
+  		<%= render 'from', wardrobe: @wardrobe %>
   		<%= link_to 'Show', wardrobe_path(@wardrobe), class: "wardrobe_#{@wardrobe.id}" %> |
   		<%= link_to 'Back', wardrobes_path, class: "back" %>
   </div>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'searches/search'
   devise_for :users
   root to: 'homes#top'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
    resources :wardrobe_comments
   end
   get '/search', to: 'searches#search'
-  get "calendars", to: "users#"
-  
+  get "calendars", to: "users#index"
+  post "calendars", to: "calendars#create"
+
 end
