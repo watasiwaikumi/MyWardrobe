@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_15_102334) do
+ActiveRecord::Schema.define(version: 2022_01_16_102849) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "title"
@@ -50,14 +50,11 @@ ActiveRecord::Schema.define(version: 2022_01_15_102334) do
     t.index ["wardrobe_id"], name: "index_post_images_on_wardrobe_id"
   end
 
-  create_table "post_tags", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
+  create_table "tagmaps", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id", "tag_id"], name: "index_post_tags_on_post_id_and_tag_id", unique: true
-    t.index ["post_id"], name: "index_post_tags_on_post_id"
-    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+    t.integer "post_image_id"
+    t.integer "tag_id"
   end
 
   create_table "tags", force: :cascade do |t|

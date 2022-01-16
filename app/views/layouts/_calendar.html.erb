@@ -19,11 +19,14 @@
                                     <span><%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %></span>
                                 </p>
                                 <span>START</span>
-                                <span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span><br>
+                                <span><%= f.datetime_field  :start, placeholder: "XXXX-XX-XX", class:"field" %> ~ </span>
+                                <br></br>
                                 <span>FINISH</span>
-                                <span><%= f.datetime_field :end, placeholder: "XXXX-XX-XX", class:"field" %></span><br>
+                                <span><%= f.datetime_field :end, placeholder: "XXXX-XX-XX", class:"field" %></span>
+                                <br></br>
                                 <span>DETAIL
                                 <%= f.text_field :body, class: "form-control", placeholder: "タイトルの詳細を記入してください" %></span>
+                                <br></br>
                             </div>
                             <div class="modal-footer">
                                 <%= f.submit "DONE", class: "btn btn-primary" %>

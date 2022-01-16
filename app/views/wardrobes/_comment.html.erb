@@ -3,9 +3,7 @@
     <% wardrobe_comment_user = wardrobe_comment.user %>
     <tr>
     	<td>
-    		<%= link_to user_path(wardrobe_comment_user), class: "user_#{wardrobe_comment_user.id}" do %>
-      		<%= attachment_image_tag wardrobe_comment_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
-    		<% end %>
+      	<%= attachment_image_tag wardrobe_comment_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
     	</td>
     	<td><%= wardrobe_comment.comment %></td>
     	<% if current_user == wardrobe_comment_user %>

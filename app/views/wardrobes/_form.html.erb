@@ -2,12 +2,20 @@
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control wardrobe_title' %>
+    <br></br>
   </div>
   <div class="form-group">
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control wardrobe_body' %>
+    <br></br>
   </div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-success' %>
+    <br></br>
+  </div>
+  
+  <div class="form-group">
+  <%= link_to 'Show', wardrobe_path(@wardrobe), class: "wardrobe_#{@wardrobe.id}" %> |
+  <%= link_to 'Back', wardrobes_path, class: "back" %>
   </div>
 <% end %>
