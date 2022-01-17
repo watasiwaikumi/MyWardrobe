@@ -11,3 +11,20 @@
 <div class='container'>
   <%= render 'layouts/calendar', calendars: @calendar %>
 </div>
+
+<%= @calendar.to_json %>
+
+
+<script>
+$('#calendar').fullCalendar({});
+
+$('#calendar').fullCalendar(
+    {
+          start: '2019-08-06',
+          end: '2019-08-08',
+          overlap: false,
+          rendering: 'background',
+          color: '#ff9f89'
+        }
+);
+</script>

@@ -6,8 +6,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @wardrobes = @user.wardrobes
     @wardrobe = Wardrobe.new
-    @calendars = Calendar.where(user_id: @user.id)
-    @calendar = Calendar.new
+    @calendars = @user.calendars
+    @calendar = @user.calendars.first
     @post_images = @user.post_images.page(params[:page])
   end
 
