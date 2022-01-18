@@ -26,7 +26,11 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @wardrobe = Wardrobe.new
-
+    @calendars = current_user.calendars
+    respond_to do |format|
+      format.html { render 'index' }
+      format.json { render json: @calenders}
+    end
   end
 
   def edit

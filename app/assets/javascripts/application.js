@@ -15,10 +15,8 @@
 //= require activestorage
 //= require moment
 //= require fullcalendar
-//= require fullcalendar/locale-all
+//= require turbolinks
 //= require_tree .
-
-
 $(function () {
     // 画面遷移を検知
     $(document).on('turbolinks:load', function () {
@@ -78,5 +76,3 @@ $(function () {
         }
     });
 });
-
-

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :events
   get 'searches/search'
   devise_for :users
   root to: 'homes#top'

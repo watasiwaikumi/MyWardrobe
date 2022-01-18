@@ -7,9 +7,22 @@
     <div class='col-md-8 offset-md-1'>
   		<table class='table'>
   		  <tr>
-  		    <% @wardrobe.post_images.each do |post_image| %>
-  		      <%= attachment_image_tag post_image, :image %>
-  		    <% end %>
+		    <% @wardrobe.post_images.each do |post_image| %>
+    		  <div class="flex_test-box">
+            <div class="item-list">
+              <div class="item">
+                <div class="item-image">
+                  <div class="item-text">
+            		    <%= attachment_image_tag post_image, :image %>
+    		          </div>
+                </div>
+      		    </div>
+            </div>
+          </div>
+        <% end %>
+        <%#= paginate @wardrobes %>
+    		</tr>
+    		<br></br>
           <td><%= link_to @wardrobe.title, wardrobe_path(@wardrobe) %></td>
           <td><%= @wardrobe.body %></td>
           <td class="favorite-btn"><%= render "favorites/favorite-btn", wardrobe: @wardrobe %></td>
@@ -19,7 +32,7 @@
             <td><%= link_to 'Destroy', wardrobe_path(@wardrobe), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_wardrobe_#{@wardrobe.id}"%> |</td>
             <td><%= link_to 'Back', wardrobes_path, class: "back" %></td>
           <% end %>
-        </tr>
+
       </table>
       <%= render 'wardrobes/comment', wardrobe: @wardrobe,wardrobe_comment: @wardrobe_comment%>
 
