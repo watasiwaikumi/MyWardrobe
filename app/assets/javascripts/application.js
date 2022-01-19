@@ -39,9 +39,9 @@ $(function () {
             $('#calendar').fullCalendar({
                 events: '/events.json',
                 //カレンダー上部を年月で表示させる
-                titleFormat: 'YYYY年 M月',
-                //曜日を日本語表示
-                dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
+                titleFormat: 'MMMM YYYY',
+                //曜日表示
+                dayNamesShort: ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'],
                 //ボタンのレイアウト
                 header: {
                     left: '',
@@ -51,21 +51,21 @@ $(function () {
                 //終了時刻がないイベントの表示間隔
                 defaultTimedEventDuration: '03:00:00',
                 buttonText: {
-                    prev: '前',
-                    next: '次',
-                    prevYear: '前年',
-                    nextYear: '翌年',
-                    today: '今日',
-                    month: '月',
-                    week: '週',
-                    day: '日'
+                    prev: '◀',
+                    next: '▶',
+                    prevYear: 'PrevYear',
+                    nextYear: 'NextYear',
+                    today: 'Today',
+                    month: 'Month',
+                    week: 'Week',
+                    day: 'Day'
                 },
                 // Drag & Drop & Resize
                 editable: true,
                 //イベントの時間表示を２４時間に
                 timeFormat: "HH:mm",
                 //イベントの色を変える
-                eventColor: '#87cefa',
+                eventColor: '#CCCCCC	',
                 //イベントの文字色を変える
                 eventTextColor: '#000000',
                 eventRender: function(event, element) {

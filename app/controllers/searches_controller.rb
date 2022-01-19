@@ -9,6 +9,9 @@ class SearchesController < ApplicationController
 			@records = User.search_for(@content, @method)
 		else
 			@records = Wardrobe.search_for(@content, @method)
+			@records = Post_image.search_for(@content, @method)
+			@records = Tag.search_for(@content, @method)
+			@records = Event.search_for(@content, @method)
 		end
 	end
 end

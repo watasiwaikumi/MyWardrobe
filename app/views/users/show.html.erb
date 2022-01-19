@@ -1,15 +1,8 @@
 <div class='container'>
   <div class='row'>
-    <div class='col-md-3'>
-        <div class='col-md-8 offset-md-1'>
-            <%= render 'layouts/search', searches: @search %>
-        </div>
-    </div>
+    <%= render 'layouts/search', searches: @search %>
+    <%= render 'events/index', events: @event %>
   </div>
 </div>
 
-<div class='container'>
-  <%= render 'layouts/calendar', calendars: @calendar %>
-</div>
-
-<%= @calendar.to_json %>
+<%#= @calendar.to_json %>

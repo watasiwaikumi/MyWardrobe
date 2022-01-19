@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_113448) do
+ActiveRecord::Schema.define(version: 2022_01_19_052542) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "title"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 2022_01_18_113448) do
     t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "all_day"
+    t.boolean "disp_flg"
   end
 
   create_table "favorites", force: :cascade do |t|

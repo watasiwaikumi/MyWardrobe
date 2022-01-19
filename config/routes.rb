@@ -15,7 +15,7 @@ Rails.application.routes.draw do
    resources :wardrobe_comments
   end
   get '/search', to: 'searches#search'
-  get "calendars", to: "users#index"
-  post "calendars", to: "calendars#create"
+  get "events", to: "users#index"
+  post "events", to: "events#create"
 
 end

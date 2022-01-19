@@ -6,8 +6,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @wardrobes = @user.wardrobes
     @wardrobe = Wardrobe.new
-    @calendars = @user.calendars
-    @calendar = @user.calendars.first
+    @events = @user.events
+    # @event = @user.events.first
     @post_images = @user.post_images.page(params[:page])
   end
 
@@ -26,10 +26,10 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @wardrobe = Wardrobe.new
-    @calendars = current_user.calendars
+    @events = current_user.events
     respond_to do |format|
       format.html { render 'index' }
-      format.json { render json: @calenders}
+      format.json { render json: @events}
     end
   end
 
