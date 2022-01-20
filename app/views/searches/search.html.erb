@@ -1,7 +1,29 @@
 <% if @model == 'user' %>
-	<h3>Users search for "<%= @content %>"</h3>
-  <%= render 'users/index', users: @records %>
+  <h3>Users search for <%= @content %></h3>
+  <% @records.each do |record| %>
+    <%= record.name %>
+  <% end %>
 <% elsif @model == 'wardrobe' %>
-	<h3>wardrobes search for "<%= @content %>"</h3>
-  <%= render 'wardrobes/index', wardrobes: @records %>
+  <h3>wardrobes search for <%= @content %></h3>
+    <% @records.each do |record| %>
+      <%= record.title %>
+    <% end %>
+<% elsif @model == 'post_image' %>
+  <% @records.each do |record| %>
+    <%= attachment_image_tag(record, :image, :fill, 60, 60) %>
+    <%= record.item_name %>
+  <% end %>
+<% elsif @model == 'tag' %>
+  <h3>tags search for <%= @content %></h3>
+  <% @records.each do |record| %>
+    <%= record.name %>
+  <% end %>
+<% elsif @model == 'event' %>
+  <h3>events search for <%= @content %></h3>
+  <% @records.each do |record| %>
+    <%= record.title %>
+    <%= record.body %>
+    <%= record.start_date %>
+  <% end %>
+
 <% end %>

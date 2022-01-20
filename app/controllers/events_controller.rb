@@ -23,7 +23,8 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event = Event.new(event_params)
+    converted_params = event_params.merge({user_id: current_user.id})
+    @event = Event.new(converted_params)
     @event.save!
     @events = Event.where(user_id: current_user.id)
     respond_to do |format|
@@ -39,8 +40,9 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1 or /events/1.json
   def update
+    converted_params = event_params.merge({user_id: current_user.id})
     respond_to do |format|
-      if @event.update(event_params)
+      if @event.update(converted_params)
         format.html { redirect_to event_url(@event), notice: "Event was successfully updated." }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -55,7 +57,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url, notice: "Event was successfully destroyed." }
+      format.html { redirect_to mypage_path, notice: "Event was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -68,6 +70,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :body, :start_date, :end_date, :user_id)
+      params.require(:event).permit(:title, :body, :start_date, :end_date)
     end
 end

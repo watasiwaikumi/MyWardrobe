@@ -19,7 +19,7 @@ class Wardrobe < ApplicationRecord
     elsif method == 'backward'
       Wardrobe.where('title LIKE ?', '%'+content)
     else
-      Wardrobe.where('title LIKE ?', '%'+content+'%')
+      Wardrobe.where('title LIKE ?', '%'+content+'%').page(1)
     end
   end
 end

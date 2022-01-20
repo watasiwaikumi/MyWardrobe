@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update]
 
   def show
-    @user = User.find(params[:id])
-    @wardrobes = @user.wardrobes
+    # @user = User.find(params[:id])
+    @wardrobes = current_user.wardrobes
     @wardrobe = Wardrobe.new
-    @events = @user.events
+    @events = current_user.events
     # @event = @user.events.first
-    @post_images = @user.post_images.page(params[:page])
+    @post_images = current_user.post_images.page(params[:page])
   end
 
   def search

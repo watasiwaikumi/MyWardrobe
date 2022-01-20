@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   resources :users do
   get "search", to: "users#search"
   end
+  
+  get 'mypage', to: "users#show"
    resources :wardrobes do
    resource :favorites
    resources :wardrobe_comments
   end
   get '/search', to: 'searches#search'
-  get "events", to: "users#index"
-  post "events", to: "events#create"
+  # get "events", to: "users#index"
+  # post "events", to: "events#create"
 
 end

@@ -11,9 +11,9 @@ class PostImagesController < ApplicationController
     tag_list = params[:post_image][:tag_name].delete(' ').delete('　').split(',')
     if @post_image.save
       @post_image.save_post_images(tag_list)
-      redirect_to post_images_path, success: '投稿しました'
+      redirect_to post_images_path, success: 'Succsess!!'
     else
-      flash.now[:danger] = '投稿に失敗しました'
+      flash.now[:danger] = 'Faild!!'
       render :new
     end
   end
@@ -30,10 +30,10 @@ class PostImagesController < ApplicationController
       @post_images = PostImage.order(created_at: "DESC").page(params[:page]).per(10)
       @post_images_side = PostImage.order(created_at: "DESC")
     end
-    respond_to do |format|
-    format.html
-    format.rss { render :layout => false }
-    end
+    # respond_to do |format|
+    # format.html
+    # format.rss { render :layout => false }
+    # end
   end
 
   def show
@@ -55,9 +55,9 @@ class PostImagesController < ApplicationController
     tag_list = params[:post_image][:tag_name].delete(' ').delete('　').split(',')
     if @post_image.update(post_image_params)
       @post_image.save_post_images(tag_list)
-      redirect_to post_images_path, success: '投稿を更新しました'
+      redirect_to post_images_path, success: 'Conpleted!!'
     else
-      flash.now[:danger] = '投稿の更新に失敗しました'
+      flash.now[:danger] = 'Not update'
       render :edit
     end
   end
