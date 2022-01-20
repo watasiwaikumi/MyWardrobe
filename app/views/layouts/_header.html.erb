@@ -1,22 +1,20 @@
 <header class="header">
-    <div class="container">
-      <div>
-        <ul>
-            <% if user_signed_in? %>
-              <li><i class="logo"><%= link_to(root_path) do %><%= image_tag 'phonto.png', :size =>'150x150' %><% end %></i></li>
-              <li><%= link_to ' Home',user_path(current_user) %></li>
-              <li><%= link_to ' User',users_path %></li>
-              <li><%= link_to ' Wardrobes', wardrobes_path %></li>
-              <li><%= link_to 'Post', new_post_image_path %></li>
-              <li><%= link_to ' logout', destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li><i class="logo"><%= link_to(root_path) do %><%= image_tag 'phonto.png', :size =>'150x150' %><% end %></i></li>
-              <li><%= link_to ' Home',root_path %></li>
-              <li><%= link_to ' About',home_about_path %></li>
-              <li><%= link_to ' sign up', new_user_registration_path %></li>
-              <li><%= link_to ' login', new_user_session_path %></li>
-            <% end %>
-        </ul>
-      </div>
-    </div>
+  <div>
+    <ul>
+      <% if user_signed_in? %>
+        <li><i class="logo"><%= link_to(root_path) do %><%= image_tag 'phonto.png', :size =>'150x150' %><% end %></i></li>
+        <li><%= link_to ' Home',user_path(current_user) %></li>
+        <li><%= link_to ' User',users_path %></li>
+        <li><%= link_to ' Wardrobes', wardrobes_path %></li>
+        <li><%= link_to 'Post', new_post_image_path %></li>
+        <li><%= link_to ' logout', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><i class="logo"><%= link_to(root_path) do %><%= image_tag 'phonto.png', :size =>'150x150' %><% end %></i></li>
+        <li><%= link_to ' Home',root_path %></li>
+        <li><%= link_to ' About',home_about_path %></li>
+        <li><%= link_to ' sign up', new_user_registration_path %></li>
+        <li><%= link_to ' login', new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
 </header>

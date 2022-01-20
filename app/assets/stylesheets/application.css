@@ -40,27 +40,27 @@ a {
   color: #000;
   text-decoration: none;
 }
+
 .logo {
   margin: 0 auto;
-  padding: 10px 20px;
 }
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 3%;
   color: #222;
   font-family: 'Courier New', monospace;
   font-weight: 300;
 }
 
 
-.form-group {
-	width: 200px;
-	float: left;
-	clear: both;
-	margin-right: 30px;
-	margin-left: 10px;
-}
+/*.form-group {*/
+/*	width: 200px;*/
+/*	float: left;*/
+/*	clear: both;*/
+/*	margin-right: 30px;*/
+/*	margin-left: 10px;*/
+/*}*/
 
 .footer {
   margin-top: auto;

@@ -27,10 +27,10 @@ class UsersController < ApplicationController
     @users = User.all
     @wardrobe = Wardrobe.new
     @events = current_user.events
-    respond_to do |format|
-      format.html { render 'index' }
-      format.json { render json: @events}
-    end
+    # respond_to do |format|
+    #   format.html { render 'index' }
+    #   format.json { render json: @events}
+    # end
   end
 
   def edit

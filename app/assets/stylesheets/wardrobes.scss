@@ -5,28 +5,25 @@
 .flex_test-box {
   display: inline-block;
   padding: 5%;
-  height: 100px;
+  height: 5%;
   flex-wrap: wrap;
 }
 
-* {
-  margin: 5;
-  padding: 0;
-}
-
 .item-list {
-  
   justify-content: space-between;
   align-items: stretch;
 }
+
 .item {
   width: 100%;
-  padding: 1em;
+  padding: 5%;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
 .item-image {
   text-align:  center;
+  width: 100%;
 }
 
 .item-image img {

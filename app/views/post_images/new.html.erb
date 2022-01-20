@@ -1,18 +1,17 @@
-<div class='container'>
-  <h1>POST</h1>
+<h1>POST</h1>
   <%= form_with model: @post_image, local:true do |f| %>
-    <h3>Wardrobe</h3>
+    <p>Wardrobe</p>
     <%= f.collection_select :wardrobe_id, @wardrobes, :id, :title %>
-    <h3>Image</h3>
+    <p>Image</p>
     <%= f.attachment_field :image %>
-    <h3>Item</h3>
+    <p>Item</p>
     <%= f.text_field :item_name %>
-    <h3>Introdaction</h3>
+    <p>Introdaction</p>
     <%= f.text_area :caption %>
-    <h3>Tag</h3>
+    <p>Tag</p>
     <%= f.text_field :tag_name, value: @tag_list %>
-    <h2></h2>
-    <%= f.submit 'DONE' %><br>
-    <h3><%= link_to 'SHOW', post_images_path(@post_image) %></h3>
+  
+    <%= f.submit 'DONE' %>
   <% end %>
-</div
+  <br></br>
+  <%= link_to 'Show your all post', post_images_path(@post_image) %>

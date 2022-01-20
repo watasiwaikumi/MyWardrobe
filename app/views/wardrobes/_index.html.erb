@@ -1,12 +1,6 @@
-<table class='table table-hover table-inverse'>
-  <thead>
-    <tr>
-      <th></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<table>
+  <th colspan="3"></th>
   <tbody>
-    
     <%= form_with model:wardrobe,local:true do |f| %>
       <div class="form-group">
         <%= f.label :title %>
@@ -22,7 +16,7 @@
         <%= f.submit class: 'btn btn-success' %>
       </div>
     <% end %>
-    
+
     <% wardrobes.each do |wardrobe| %>
       <tr>
       <td><%= attachment_image_tag(wardrobe.user, :profile_image, :fill, 50, 50) %></td>
@@ -31,6 +25,6 @@
         <td class="favorite-btn"><%= render "favorites/favorite-btn", wardrobe: wardrobe %></td>
       </tr>
     <% end %>
-    
   </tbody>
 </table>
+<%= paginate @wardrobes %>

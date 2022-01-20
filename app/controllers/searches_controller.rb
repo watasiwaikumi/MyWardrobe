@@ -8,10 +8,18 @@ class SearchesController < ApplicationController
 		if @model == 'user'
 			@records = User.search_for(@content, @method)
 		else
-			@records = Wardrobe.search_for(@content, @method)
-			@records = Post_image.search_for(@content, @method)
-			@records = Tag.search_for(@content, @method)
-			@records = Event.search_for(@content, @method)
+		# if @model == 'wardrobe'
+		# 	@records = Wardrobe.search_for(@content, @method)
+		# else
+		# if @model == 'post_image'
+		# 	@records = Post_image.search_for(@content, @method)
+		# else
+		# if @model == 'tag'
+		# 	@records = Tag.search_for(@content, @method)
+		# else
+		# if @model == 'event'
+		# 	@records = Event.search_for(@content, @method)
+		# else
 		end
 	end
 end
