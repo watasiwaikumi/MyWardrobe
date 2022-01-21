@@ -6,11 +6,11 @@ class Event < ApplicationRecord
     if method == 'perfect'
       Event.where(title: content)
     elsif method == 'forward'
-      Event.where('name LIKE ?', "#{content}%")
+      Event.where('title LIKE ?', "#{content}%")
     elsif method == 'backward'
-      Event.where('name LIKE ?', "%#{content}")
+      Event.where('title LIKE ?', "%#{content}")
     else
-      Event.where('name LIKE ?', "%#{content}%")
+      Event.where('title LIKE ?', "%#{content}%")
     end
   end
   

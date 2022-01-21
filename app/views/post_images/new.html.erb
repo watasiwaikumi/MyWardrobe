@@ -10,8 +10,9 @@
     <%= f.text_area :caption %>
     <p>Tag</p>
     <%= f.text_field :tag_name, value: @tag_list %>
-  
+
     <%= f.submit 'DONE' %>
   <% end %>
   <br></br>
   <%= link_to 'Show your all post', post_images_path(@post_image) %>
+  <div align="right"><%= image_tag 'IMG_3187.jpg', :size =>'250x250' %></div>

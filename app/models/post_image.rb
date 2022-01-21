@@ -28,11 +28,11 @@ class PostImage < ApplicationRecord
     if method == 'perfect'
       PostImage.where(item_name: content)
     elsif method == 'forward'
-      PostImage.where('name LIKE ?', "#{content}%")
+      PostImage.where('item_name LIKE ?', "#{content}%")
     elsif method == 'backward'
-      PostImage.where('name LIKE ?', "%#{content}")
+      PostImage.where('item_name LIKE ?', "%#{content}")
     else
-      PostImage.where('name LIKE ?', "%#{content}%")
+      PostImage.where('item_name LIKE ?', "%#{content}%")
     end
   end
 

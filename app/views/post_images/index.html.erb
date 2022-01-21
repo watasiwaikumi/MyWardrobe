@@ -10,12 +10,12 @@
               <% end %>
               <p>Wardrobe：<%= post_image.item_name %></p>
               <p>Introdaction：<%= post_image.caption %></p>
-              <p>Tags : 
+              <p>Tags :
                <% post_image.tags.each do |tag| %>
                <%= tag.name %>,
                <% end %>
               </p>
-              
+
               <td><%= link_to 'Show', post_image_path(post_image), class: "post_image#{post_image.id}" %></td>
             </div>
           </div>
@@ -27,7 +27,11 @@
 <br></br>
 <%= paginate @post_images %>
 
+<ul>
+<p>All tag's</p>
 <%@tag_list.each do |list| %>
-     <p><%=link_to list.name,post_images_path(tag_id:list.id)%><%= list.post_images.count %></p>
+  <p> ▶ <%=link_to list.name,post_images_path(tag_id:list.id)%><%= list.post_images.count %> | </p>
 <% end %>
+</ul>
+
 </div>

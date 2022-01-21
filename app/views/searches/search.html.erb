@@ -3,23 +3,28 @@
   <% @records.each do |record| %>
     <%= record.name %>
   <% end %>
+  
 <% elsif @model == 'wardrobe' %>
-  <h3>wardrobes search for <%= @content %></h3>
+  <h3>Wardrobes search for <%= @content %></h3>
     <% @records.each do |record| %>
       <%= record.title %>
     <% end %>
+    
 <% elsif @model == 'post_image' %>
+ <h3>PostImages search for <%= @content %></h3>
   <% @records.each do |record| %>
-    <%= attachment_image_tag(record, :image, :fill, 60, 60) %>
+    <%= attachment_image_tag(record, :image, :fill, 100, 100) %>
     <%= record.item_name %>
   <% end %>
+  
 <% elsif @model == 'tag' %>
-  <h3>tags search for <%= @content %></h3>
+  <h3>Tags search for <%= @content %></h3>
   <% @records.each do |record| %>
     <%= record.name %>
   <% end %>
+  
 <% elsif @model == 'event' %>
-  <h3>events search for <%= @content %></h3>
+  <h3>Events search for <%= @content %></h3>
   <% @records.each do |record| %>
     <%= record.title %>
     <%= record.body %>

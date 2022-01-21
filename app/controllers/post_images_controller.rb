@@ -23,11 +23,11 @@ class PostImagesController < ApplicationController
     if params[:tag_id]
       @tag_list = Tag.all
       @tag = Tag.find(params[:tag_id])
-      @post_images = @tag.post_images.order(created_at: "DESC").page(params[:page]).per(10)
+      @post_images = @tag.post_images.order(created_at: "DESC").page(params[:page]).per(6)
       # @post_images_side = Post_tag.order(created_at: "DESC")
     else
       @tag_list = Tag.all
-      @post_images = PostImage.order(created_at: "DESC").page(params[:page]).per(10)
+      @post_images = PostImage.order(created_at: "DESC").page(params[:page]).per(6)
       @post_images_side = PostImage.order(created_at: "DESC")
     end
     # respond_to do |format|
