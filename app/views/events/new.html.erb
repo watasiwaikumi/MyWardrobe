@@ -1,5 +1,11 @@
 <h1>New Event</h1>
+<div class="event_content">
+  <div class="event_left">
+    <%= render 'form', event: @event %>
 
-<%= render 'form', event: @event %>
-
-<%= link_to 'Back', mypage_path %>
+    <%= link_to 'Back', mypage_path %>
+  </div>
+  <div class="event_right">
+  <%= image_tag 'IMG_3200.jpg', :size =>'250x250' %>
+  </div>
+</div>

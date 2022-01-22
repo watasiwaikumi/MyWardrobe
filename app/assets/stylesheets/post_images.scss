@@ -15,7 +15,6 @@
 }
 
 .item-list {
-  
   justify-content: space-between;
   align-items: stretch;
 }
@@ -34,6 +33,34 @@
   height: auto;
 }
 
-ul{
+.tag_lists {
   display: flex;
+  justify-content: center;
+  
+}
+
+.post_content {
+ display: flex;
+ justify-content: space-between;
+    
+ .post_left {
+   width: 50%;
+ } 
+ 
+ .post_right {
+   width: 25%;
+ }
+}
+
+.edit_content {
+   display: flex;
+   justify-content: space-between;
+    
+.edit_left {
+   width: 60%;
+ } 
+ 
+ .edit_right {
+   width: 20%;
+ }
 }

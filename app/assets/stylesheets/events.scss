@@ -2,6 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#calendar {
-  width: 100%;
+
+.calendar_content {
+ display: flex;
+ justify-content: space-between;
+
+ .calendar_left {
+   width: 50%;
+ }
+
+ .calendar_right {
+   width: 45%;
+ }
+}
+
+.event_content {
+ display: flex;
+ justify-content: space-between;
+
+ .event_left {
+   width: 60%;
+ }
+
+ .event_right {
+   width: 20%;
+ }
+}
+
+.edit_content {
+   display: flex;
+   justify-content: space-between;
+    
+.edit_left {
+   width: 60%;
+ } 
+ 
+ .edit_right {
+   width: 20%;
+ }
 }

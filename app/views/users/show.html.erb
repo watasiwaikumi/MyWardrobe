@@ -1,8 +1,5 @@
-<div class='container'>
-  <div class='row'>
-    <%= render 'layouts/search', searches: @search %>
-    <%= render 'events/event', events: @event %>
-  </div>
+<div>
+  <%= render 'layouts/search', searches: @search %>
+  <br></br>
+  <%= render 'events/event', events: @event %>
 </div>
-
-<%#= @calendar.to_json %>

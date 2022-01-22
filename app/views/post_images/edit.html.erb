@@ -1,19 +1,26 @@
-<h1>Editing Post</h1>
-  <%= render 'layouts/errors', obj: @post_image %>
-  	<%= form_with model:@post_image, local:true do |f| %>
-      <%= f.collection_select :wardrobe_id, @wardrobes, :id, :title %>
-      <p>Image</p>
-      <%= f.attachment_field :image %>
-      <p>Item</p>
-      <%= f.text_field :item_name %>
-      <p>Introdaction</p>
-      <%= f.text_area :caption %>
-      <p>Tag</p>
-      <%= f.text_field :tag_name, value: @tag_list %>
-      
-      <%= f.submit 'DONE' %>
-    <% end %>
-    <br></br>
-		<%#= render 'form', wardrobe: @wardrobe %>
-		<%= link_to 'Show', post_images_path(@post_image), class: "post_image_#{@post_image.id}" %> |
-		<%= link_to 'Back', post_image_path, class: "back" %>
+<div class="edit_content">
+  <div class="edit_left">
+    <h1>Editing Post</h1>
+      <%= render 'layouts/errors', obj: @post_image %>
+      	<%= form_with model:@post_image, local:true do |f| %>
+          <%= f.collection_select :wardrobe_id, @wardrobes, :id, :title %>
+          <p>Image</p>
+          <%= f.attachment_field :image %>
+          <p>Item</p>
+          <%= f.text_field :item_name %>
+          <p>Introdaction</p>
+          <%= f.text_area :caption %>
+          <p>Tag</p>
+          <%= f.text_field :tag_name, value: @tag_list %>
+          
+          <%= f.submit 'DONE' %>
+        <% end %>
+        <br></br>
+    		<%#= render 'form', wardrobe: @wardrobe %>
+    		<%= link_to 'Show', post_images_path(@post_image), class: "post_image_#{@post_image.id}" %> |
+    		<%= link_to 'Back', post_image_path, class: "back" %>
+  </div>
+  <div class="edit_right"> 
+    <%= image_tag 'IMG_3202.jpg', :size =>'300x300' %>
+  </div>
+</div>

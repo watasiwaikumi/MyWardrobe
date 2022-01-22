@@ -76,8 +76,12 @@ body {
     display: block;
 }
 
+
 @media screen and (max-width:1024px) {
 }
 
 @media screen and (max-width: 540px) {
+}
+
+@media screen and (max-width:480px) {
 }

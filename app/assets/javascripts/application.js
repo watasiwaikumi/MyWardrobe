@@ -37,6 +37,7 @@ $(function () {
 
             //events: '/events.json', 以下に追加
             $('#calendar').fullCalendar({
+                height: 600,
                 events: '/events.json',
                 //カレンダー上部を年月で表示させる
                 titleFormat: 'MMMM YYYY',

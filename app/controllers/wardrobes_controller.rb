@@ -7,12 +7,12 @@ class WardrobesController < ApplicationController
     @newwardrobe = Wardrobe.new
     @user = @wardrobe.user
     @wardrobe_comment = WardrobeComment.new
-    @wardrobes = Wardrobe.page(params[:page]).reverse_order
+    @post_images = PostImage.where(wardrobe_id: @wardrobe.id).page(params[:page]).per(6).reverse_order
   end
 
   def index
     @wardrobe = Wardrobe.new
-    @wardrobes = Wardrobe.page(params[:page]).reverse_order
+    @wardrobes = Wardrobe.page(params[:page]).per(5).reverse_order
   end
 
   def create

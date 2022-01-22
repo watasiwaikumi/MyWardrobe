@@ -3,32 +3,33 @@
   <% @records.each do |record| %>
     <%= record.name %>
   <% end %>
-  
+
 <% elsif @model == 'wardrobe' %>
   <h3>Wardrobes search for <%= @content %></h3>
     <% @records.each do |record| %>
-      <%= record.title %>
+      <%= link_to record.title, wardrobe_path(record.id) %>,
     <% end %>
-    
+
 <% elsif @model == 'post_image' %>
  <h3>PostImages search for <%= @content %></h3>
   <% @records.each do |record| %>
     <%= attachment_image_tag(record, :image, :fill, 100, 100) %>
-    <%= record.item_name %>
+    <%= link_to record.item_name, post_image_path(record.id) %>,
   <% end %>
-  
+
 <% elsif @model == 'tag' %>
   <h3>Tags search for <%= @content %></h3>
   <% @records.each do |record| %>
-    <%= record.name %>
+    <%= link_to record.name, post_images_path(tag_id:record.id) %>,
   <% end %>
-  
+
 <% elsif @model == 'event' %>
   <h3>Events search for <%= @content %></h3>
   <% @records.each do |record| %>
-    <%= record.title %>
+    <%#= record.title %>
+    <%= link_to record.title, event_path(record.id) %>
     <%= record.body %>
-    <%= record.start_date %>
+    <%= record.start_date %>,
   <% end %>
 
 <% end %>

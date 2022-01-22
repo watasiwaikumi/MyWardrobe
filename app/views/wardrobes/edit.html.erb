@@ -1,7 +1,12 @@
-<div class='container'>
+<div class="edit_content">
+  <div class="edit_left">
 	<h1>Editing wardrobe</h1>
 	<%= render 'layouts/errors', obj: @wardrobe %>
 	<%= render 'form', wardrobe: @wardrobe %>
 	<%#= link_to 'Show', wardrobe_path(@wardrobe), class: "wardrobe_#{@wardrobe.id}" %>
 	<%#= link_to 'Back', wardrobes_path, class: "back" %>
+	</div>
+	<div class="edit_right"> 
+    <%= image_tag 'IMG_3202.jpg', :size =>'300x300' %>
+  </div>
 </div>

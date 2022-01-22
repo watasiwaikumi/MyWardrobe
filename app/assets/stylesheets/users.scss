@@ -9,3 +9,29 @@
 	margin-right: 25%;
 	margin-left: 1%;
 }
+
+.user_content {
+   display: flex;
+   justify-content: space-between;
+    
+.user_left {
+   width: 60%;
+ } 
+ 
+ .user_right {
+   width: 20%;
+ }
+}
+
+.edit_content {
+   display: flex;
+   justify-content: space-between;
+    
+.edit_left {
+   width: 60%;
+ } 
+ 
+ .edit_right {
+   width: 20%;
+ }
+}

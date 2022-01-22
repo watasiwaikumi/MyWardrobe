@@ -1,18 +1,24 @@
 <h1>POST</h1>
-  <%= form_with model: @post_image, local:true do |f| %>
-    <p>Wardrobe</p>
-    <%= f.collection_select :wardrobe_id, @wardrobes, :id, :title %>
-    <p>Image</p>
-    <%= f.attachment_field :image %>
-    <p>Item</p>
-    <%= f.text_field :item_name %>
-    <p>Introdaction</p>
-    <%= f.text_area :caption %>
-    <p>Tag</p>
-    <%= f.text_field :tag_name, value: @tag_list %>
-
-    <%= f.submit 'DONE' %>
-  <% end %>
-  <br></br>
-  <%= link_to 'Show your all post', post_images_path(@post_image) %>
-  <div align="right"><%= image_tag 'IMG_3187.jpg', :size =>'250x250' %></div>
+<div class="post_content">
+  <div class="post_left">
+    <%= form_with model: @post_image, local:true do |f| %>
+      <p>Wardrobe</p>
+      <%= f.collection_select :wardrobe_id, @wardrobes, :id, :title %>
+      <p>Image</p>
+      <%= f.attachment_field :image %>
+      <p>Item</p>
+      <%= f.text_field :item_name %>
+      <p>Introdaction</p>
+      <%= f.text_area :caption %>
+      <p>Tag</p>
+      <%= f.text_field :tag_name, value: @tag_list %>
+      <br></br>
+      <%= f.submit 'Let is post !!' %>
+    <% end %>
+    <br></br>
+    <%= link_to 'Show your all post', post_images_path(@post_image) %>
+  </div>
+  <div class="post_right">
+  <%= image_tag 'IMG_3199.JPG', :size =>'300x300' %>
+  </div>
+</div>

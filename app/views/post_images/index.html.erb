@@ -27,11 +27,11 @@
 <br></br>
 <%= paginate @post_images %>
 
-<ul>
-<p>All tag's</p>
-<%@tag_list.each do |list| %>
-  <p> ▶ <%=link_to list.name,post_images_path(tag_id:list.id)%><%= list.post_images.count %> | </p>
-<% end %>
-</ul>
+<div class="tag_lists">
+  <p>All tag's</p>
+  <%@tag_list.each do |list| %>
+    <p> ▶ <%=link_to list.name,post_images_path(tag_id:list.id)%><%= list.post_images.count %> | </p>
+  <% end %>
+</div>
 
 </div>
