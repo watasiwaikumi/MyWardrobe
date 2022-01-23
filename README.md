@@ -28,7 +28,7 @@
 また、衣替えや断捨離などを行う時の参考に利用できます。
 
 ## 設計書
-<...>
+<https://docs.google.com/spreadsheets/d/1aHlFN6MOUCN4c36NMpkFsETLsV8K9nLCBLzqGkq-yyg/edit?usp=sharing>
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1pf3_AIKRMI0s2XZ18lwFkqYY99ONCLejmSRM3CKLzg4/edit?usp=sharing>
@@ -43,4 +43,3 @@
 ## 使用素材
 - ICOOON MONO　<https://icooon-mono.com/>
 - Happy Friday Space Travelers <https://dribbble.com/shots/1896042-Happy-Friday-Space-Travelers>
-- Linustock <https://www.linustock.com/>
