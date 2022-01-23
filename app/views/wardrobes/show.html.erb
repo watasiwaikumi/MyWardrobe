@@ -8,7 +8,9 @@
             <div class="item">
               <div class="item-image">
                 <div class="item-text">
-          		    <%= attachment_image_tag post_image, :image %>
+          		    <%= attachment_image_tag post_image, :image %><br />
+          		    <br></br>
+          		    <%= link_to post_image.item_name, post_image_path(post_image.id) %>
   		          </div>
               </div>
     		    </div>

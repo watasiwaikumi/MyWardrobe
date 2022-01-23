@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @events = current_user.events
     # @event = @user.events.first
     @post_images = current_user.post_images.page(params[:page])
-    @events = Event.page(params[:page]).per(10).reverse_order
+    @events = Event.page(params[:page]).per(3).reverse_order
   end
 
   def search

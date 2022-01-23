@@ -6,13 +6,14 @@
 .calendar_content {
  display: flex;
  justify-content: space-between;
+ display: contents;
 
  .calendar_left {
-   width: 50%;
+   width: 100%;
  }
 
  .calendar_right {
-   width: 45%;
+   width: 100%;
  }
 }
 
