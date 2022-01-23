@@ -1,0 +1,9 @@
+<div class= "tag_content">
+  <% @tags.each do |tag| %>
+  <h4>
+  <%= tag.name %>(<%= tag.post_images.count %>)
+  "<%= link_to "DELETE", tag_path(tag), method: :delete %>"
+  </h4>
+  <% end %>
+  <%= paginate @tags %>
+</div>

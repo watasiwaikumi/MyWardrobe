@@ -7,6 +7,7 @@
         <li><%= link_to ' User',users_path %></li>
         <li><%= link_to ' Wardrobes', wardrobes_path %></li>
         <li><%= link_to 'Post', new_post_image_path %></li>
+        <li><%= link_to 'Tag', tags_path %></li>
         <li><%= link_to ' logout', destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><i class="logo"><%= link_to(root_path) do %><%= image_tag 'phonto.png', :size =>'150x150' %><% end %></i></li>

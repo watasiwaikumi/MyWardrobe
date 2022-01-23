@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users do
   get "search", to: "users#search"
   end
-  
+
   get 'mypage', to: "users#show"
    resources :wardrobes do
    resource :favorites
@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   get '/search', to: 'searches#search'
   # get "events", to: "users#index"
   # post "events", to: "events#create"
+
+  resources :tags, only: [:index, :destroy]
 
 end
