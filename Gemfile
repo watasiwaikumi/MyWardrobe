@@ -74,8 +74,5 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'turbolinks', '~> 5'
 
-
+gem 'mysql2'
 gem 'dotenv-rails'
-group :production do
-  gem 'mysql2'
-end

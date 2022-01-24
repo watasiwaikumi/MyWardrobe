@@ -12,26 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_01_19_052542) do
 
-  create_table "calendars", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.boolean "disp_flg"
-    t.datetime "start"
-    t.datetime "end"
-    t.string "all_day"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "comment"
-    t.integer "user_id"
-    t.integer "wardrobe_id"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "body"
@@ -52,14 +32,12 @@ ActiveRecord::Schema.define(version: 2022_01_19_052542) do
   end
 
   create_table "post_images", force: :cascade do |t|
-    t.integer "wardrobe_id", null: false
     t.text "item_name"
     t.string "image_id"
     t.text "caption"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["wardrobe_id"], name: "index_post_images_on_wardrobe_id"
   end
 
   create_table "tagmaps", force: :cascade do |t|
@@ -82,9 +60,9 @@ ActiveRecord::Schema.define(version: 2022_01_19_052542) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
+    t.string "profile_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "profile_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
