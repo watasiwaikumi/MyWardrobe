@@ -76,3 +76,6 @@ gem 'turbolinks', '~> 5'
 
 gem 'mysql2'
 gem 'dotenv-rails'
+group :development do
+  gem 'listen'
+end
