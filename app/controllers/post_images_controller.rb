@@ -10,6 +10,7 @@ class PostImagesController < ApplicationController
     @post_image.user_id = current_user.id
     tag_list = params[:post_image][:tag_name].delete(' ').delete('　').split(',')
     if @post_image.save
+      #制作したタグと自動生成されたタグを合わせて
       tags = Vision.get_image_data(@post_image.image)
       @post_image.save_post_images(tag_list + tags)
       # binding.irb
