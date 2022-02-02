@@ -37,11 +37,11 @@
 .wardrobe_content {
  display: flex;
  justify-content: space-between;
-    
+
  .wardrobe_left {
    width: 20%;
- } 
- 
+ }
+
  .wardrobe_right {
    width: 70%;
    display: grid;
@@ -51,12 +51,48 @@
 .edit_content {
    display: flex;
    justify-content: space-between;
-    
+
 .edit_left {
    width: 60%;
- } 
- 
+ }
+
  .edit_right {
    width: 20%;
  }
+}
+
+@media (max-width:767px){
+  .wardrobe_content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+  .wardrobe_right {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    padding-top: 10%;
+}
+}
+
+ .edit_content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.wardrobe_show {
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: stretch;
+}
+
+textarea {
+width: 100%;
+height: auto;
+}
+
 }

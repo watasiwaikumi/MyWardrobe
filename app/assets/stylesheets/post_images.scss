@@ -64,3 +64,16 @@
    width: 20%;
  }
 }
+
+@media (max-width:767px){
+  .post_content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+ .tag_lists {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+}
