@@ -1,10 +1,9 @@
 <header class="header">
-  <div>
-    <!--<i class="logo"><%#= link_to(root_path) do %><%#= image_tag 'phonto.png', :size =>'150x150' %><%# end %></i>-->
-    <!--<nav class="nav">-->
+  <div><i class="logo"><%= link_to(root_path) do %><%= image_tag 'phonto.png', :size =>'150x150' %><% end %></i></div>
+    <nav class="nav">
       <ul>
         <% if user_signed_in? %>
-          <li><i class="logo"><%= link_to(root_path) do %><%= image_tag 'phonto.png', :size =>'150x150' %><% end %></i></li>
+          
           <li><%= link_to ' Home',user_path(current_user) %></li>
           <li><%= link_to ' User',users_path %></li>
           <li><%= link_to ' Wardrobes', wardrobes_path %></li>
@@ -12,20 +11,19 @@
           <li><%= link_to 'Tag', tags_path %></li>
           <li><%= link_to ' logout', destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><i class="logo"><%= link_to(root_path) do %><%= image_tag 'phonto.png', :size =>'150x150' %><% end %></i></li>
+         
           <li><%= link_to ' Home',root_path %></li>
           <li><%= link_to ' About',home_about_path %></li>
           <li><%= link_to ' sign up', new_user_registration_path %></li>
           <li><%= link_to ' login', new_user_session_path %></li>
         <% end %>
       </ul>
-    <!--</nav>-->
-    <!--<button type="button" id="navbtn"></button>-->
-  </div>
+    </nav>
+    <button type="button" id="navbtn"></button>
 </header>
 
-<!--<script>-->
-<!--document.getElementById("navbtn").onclick = function(){-->
-<!--  document.querySelector('html').classList.toggle('open');-->
-<!--}-->
-<!--</script>-->
+<script>
+  document.getElementById("navbtn").onclick = function(){
+  document.querySelector('html').classList.toggle('open');
+}
+</script>

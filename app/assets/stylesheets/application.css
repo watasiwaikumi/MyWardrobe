@@ -14,6 +14,7 @@
  *= require_self
  *= require fullcalendar
  */
+ 
 .header{
   width: 100%;
   margin: 0 auto;
@@ -21,18 +22,12 @@
   font-family: 'Courier New', monospace;
 }
 
-
 ul {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  list-style: none;
-  text-align: center;
-  overflow: hidden;
 }
 ul li{
-  padding: 0 5%;
+  padding: 0 20%;
   display: inline;
 }
 
@@ -76,113 +71,107 @@ body {
     display: block;
 }
 
-
 @media (max-width:767px){
-  .responsive {
-  max-width: 100%;
-  height: auto;
-}
-/*  .nav{*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100vh;*/
-/*    background: rgba(0,0,0,0.9);*/
-/*    color: #ffffff;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
+  
+  .nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* 初期：非表示 */
-/*    visibility: hidden;*/
-/*    opacity: 0;*/
+    visibility: hidden;
+    opacity: 0;
     /* ふわっと表示 */
-/*    transition: 0.5s ease-in-out;*/
-/*  }*/
-/*  .nav ul{*/
-/*    list-style:none;*/
-/*  }*/
-/*  .nav li:not(:last-child){*/
-/*    margin-bottom: 30px;*/
-/*  }*/
-/*  .nav a{*/
-/*    color: #ffffff;*/
-/*  }*/
-/*}*/
+    transition: 0.5s ease-in-out;
+  }
+  .nav ul{
+    list-style:none;
+    flex-direction: column;
+  }
+  .nav li:not(:last-child){
+    margin-bottom: 30px;
+  }
+  .nav a{
+    color: #ffffff;
+  }
+}
 /* ナビゲーションボタン（開く） */
-/*#navbtn{*/
-/*  position: fixed;*/
-/*  top: 15px;*/
-/*  right: 15px;*/
-/*  padding: 0;*/
-/*  outline: none;*/
-/*  border: none;*/
-/*  background: none;*/
-/*  width: 30px;*/
-/*  height: 20px;*/
-/*  cursor: pointer;*/
-/*}*/
+#navbtn{
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
 
-/*#navbtn::before,*/
-/*#navbtn::after{*/
-/*  content : '';*/
-/*  display: block;*/
-/*  height: 1px;*/
-/*  background-color: #333333;*/
-/*  transform: translateY(10px);*/
-/*  transition: 0.3s ease-in-out;*/
-/*}*/
+#navbtn::before,
+#navbtn::after{
+  content : '';
+  display: block;
+  height: 1px;
+  background-color: #333333;
+  transform: translateY(10px);
+  transition: 0.3s ease-in-out;
+}
 
-/*#navbtn::before{*/
-/*  transform: translateY(-10px);*/
-/*  box-shadow: 0 10px #333333;*/
-/*}*/
+#navbtn::before{
+  transform: translateY(-10px);
+  box-shadow: 0 10px #333333;
+}
 
 /* ナビゲーションボタン（閉じる） */
-/*.open #navbtn{*/
-/*  z-index: 100;*/
-/*}*/
-/*.open #navbtn::before{*/
-/*  transform: rotate(-45deg);*/
-/*  box-shadow: none;*/
-/*}*/
-/*.open #navbtn::after{*/
-/*  transform: rotate(45deg);*/
-/*  box-shadow: none;*/
-/*}*/
+.open #navbtn{
+  z-index: 100;
+}
+.open #navbtn::before{
+  transform: rotate(-45deg);
+  box-shadow: none;
+}
+.open #navbtn::after{
+  transform: rotate(45deg);
+  box-shadow: none;
+}
 /* ナビゲーションメニュー 開いた時*/
-/*.open .nav{*/
-/*  visibility: visible;*/
-/*  opacity: 1;*/
+.open .nav{
+  visibility: visible;
+  opacity: 1;
 }
 
 @media(min-width: 768px){
-  .responsive {
-  max-width: 100%;
-  height: auto;
-}
+ 
   /* PCではボタン非表示 */
-  /*#navbtn{*/
-  /*  display:none;*/
-  /*}*/
+  #navbtn{
+    display:none;
+  }
   /* ヘッダーは横並び */
-  /*header{*/
-  /*  display: flex;*/
-  /*  align-items: center;*/
-  /*}*/
+  header{
+    display: flex;
+    align-items: center;
+  }
   /* メニューを右に寄せる */
-  /*.nav{*/
+  .nav{
     /* 右寄せ */
-  /*  margin-left: auto;*/
-  /*}*/
-  /*.nav ul{*/
-  /*  display: flex;*/
-  /*  list-style:none*/
-  /*}*/
-  /*.nav ul li:not(:first-child){*/
-  /*  margin-left:20px;*/
-  /*}*/
-  /*.nav ul li a {*/
-  /*  color: #000000;*/
-  /*}*/
+    text-align: center
+  }
+  .nav ul{
+    display: flex;
+    list-style:none
+  }
+  .nav ul li:not(:first-child){
+    margin-left:20px;
+  }
+  .nav ul li a { 
+    color: #000000;
+  }
 }
