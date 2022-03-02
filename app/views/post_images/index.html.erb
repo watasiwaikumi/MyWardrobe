@@ -1,5 +1,5 @@
 <div align="center">
-<% @post_images.each do |post_image| %>
+  <% @post_images.each do |post_image| %>
     <div class="flex_test-box">
       <div class="item-list">
         <div class="item">
@@ -22,16 +22,16 @@
         </div>
       </div>
     </div>
-<% end %>
+  <% end %>
 <br></br>
 <br></br>
 <%= paginate @post_images %>
 
-<div class="tag_lists">
-  <p>All tag's</p>
-  <%@tag_list.each do |list| %>
-    <p> ▶ <%=link_to list.name,post_images_path(tag_id:list.id)%><%= list.post_images.count %> | </p>
-  <% end %>
-</div>
+  <div class="tag_lists">
+    <p>All tag's</p>
+    <%@tag_list.each do |list| %>
+      <p> ▶ <%=link_to list.name,post_images_path(tag_id:list.id)%><%= list.post_images.count %> | </p>
+    <% end %>
+  </div>
 
 </div>
