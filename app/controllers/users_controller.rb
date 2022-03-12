@@ -57,6 +57,11 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+  
+  # def favorites
+  #   favorites = favorite.where(user_id: @user.id).pluck(:post_id)
+  #   @favorite_posts = Post.find(favorites)
+  # end
 
   private
 
